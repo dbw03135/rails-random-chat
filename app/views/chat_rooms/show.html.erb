@@ -1,14 +1,14 @@
-<h1><%= @chat_room.title %></h1>
+<h1><%= link_to "방 삭제", @chat_room, method: :delete, data: {confirm: "You sure?"}, class: 'btn'%></h1>
+
 
 <div id="messages" data-chat-room-id="<%= @chat_room.id %>">
   <%= render @chat_room.messages %>
 </div>
-개설자: <%= @chat_room.user.name %><br>
-참가자: <%= @user2 %>
 
 <hr>
 <%= form_for @message, url: '#' do |f| %>
   <%= hidden_field_tag 'chat_room_id', @chat_room.id %>
+
   <div class="form-group">
     <%#= f.label :body %>
     <%= f.text_area :body, class: 'form-control' %>

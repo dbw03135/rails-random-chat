@@ -11,10 +11,11 @@ jQuery(document).on 'turbolinks:load', ->
       },
       connected: ->
         # Called when the subscription is ready for use on the server
-        @printMessage(username + "님이 입장하셨습니다")
+        @perform 'send_message', message: " 님이 입장하셨습니다", chat_room_id: messages.data('chat-room-id')
+
       disconnected: ->
         # Called when the subscription has been terminated by the server
-        @printMessage(username + "님이 퇴장하셨습니다")
+        @perform 'send_message', message: " 님이 퇴장하셨습니다", chat_room_id: 16
 
       received: (data) ->
         messages.append data['message']
@@ -31,7 +32,7 @@ jQuery(document).on 'turbolinks:load', ->
     $('#new_message').submit (e) ->
       $this = $(this)
       textarea = $this.find('#message_body')
-      if $.trim(textarea.val()).length > 1
+      if $.trim(textarea.val()).length > 0
         App.global_chat.send_message textarea.val(), messages.data('chat-room-id')
         textarea.val('')
       e.preventDefault()
