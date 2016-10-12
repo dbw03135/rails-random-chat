@@ -39,12 +39,17 @@ class ChatRoomsController < ApplicationController
     end
   end
 
-  def destroy
-    @chat_room = ChatRoom.find(params[:id])
-    @chat_room.destroy
-    redirect_to '/'
-    flash[:error] = "Post was destroyed!"
+  def exit
+
   end
+
+
+  #def destroy
+  #  @chat_room = ChatRoom.find(params[:id])
+  #  @chat_room.destroy
+  #  redirect_to '/'
+  #  flash[:error] = "Post was destroyed!"
+  #end
 
 
 

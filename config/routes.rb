@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :chat_rooms, only: [:new, :create, :show, :index, :destroy]
+  resources :chat_rooms, only: [:new, :create, :show, :index]
 
   get '/search' => 'chat_rooms#search'
+
+  post '/exit' => 'chat_rooms#exit'
 
   mount ActionCable.server => '/cable'
 

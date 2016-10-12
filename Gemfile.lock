@@ -86,7 +86,6 @@ GEM
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
-    pg (0.19.0)
     pkg-config (1.1.7)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -174,7 +173,6 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   jquery-rails
-  pg
   pry-rails
   puma (~> 3.0)
   rails (>= 5.0.0.rc1, < 5.1)

@@ -1,4 +1,4 @@
-<h1><%= link_to "방 삭제", @chat_room, method: :delete, data: {confirm: "You sure?"}, class: 'btn'%></h1>
+<h1><%= link_to "방 삭제", @chat_room, method: :delete, data: {confirm: "You sure?"}, class: 'btn btn-primary btn-lg'%></h1>
 
 
 <div id="messages" data-chat-room-id="<%= @chat_room.id %>">
@@ -15,8 +15,9 @@
     <small class="text-muted">2글자 ~ 1000글자</small>
   </div>
 
-  <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
+  <%= f.submit "전송", class: 'btn btn-primary btn-lg' %>
 <% end %>
+
 
 <script>
   $('#message_body').keypress(function (e) {

@@ -15,7 +15,8 @@ jQuery(document).on 'turbolinks:load', ->
 
       disconnected: ->
         # Called when the subscription has been terminated by the server
-        @perform 'send_message', message: " 님이 퇴장하셨습니다", chat_room_id: 16
+        #@perform 'send_message', message: " 님이 퇴장하셨습니다", chat_room_id: messages.data('chat-room-id')
+        @printMessage("what the fuck")
 
       received: (data) ->
         messages.append data['message']
