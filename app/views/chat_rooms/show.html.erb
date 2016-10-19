@@ -1,4 +1,7 @@
-<h1><%= link_to "방 삭제", @chat_room, method: :delete, data: {confirm: "You sure?"}, class: 'btn btn-primary btn-lg'%></h1>
+<h1>
+  <%#= link_to "방 삭제", @chat_room, method: :delete, data: {confirm: "You sure?"}, class: 'btn btn-primary btn-lg'%>
+  <a href="/chat_rooms"><button id="exit_room" class="btn btn-primary btn-lg">나가기</button></a>
+</h1>
 
 
 <div id="messages" data-chat-room-id="<%= @chat_room.id %>">
