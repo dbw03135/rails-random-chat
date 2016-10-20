@@ -31,12 +31,6 @@ class ChatRoomsController < ApplicationController
       @chat_room.save
     end
     @message = Message.new
-
-    if @chat_room.user2
-      @user2 = User.find(@chat_room.user2).name
-    else
-      @user2 = "기다리는중"
-    end
   end
 
   def exit

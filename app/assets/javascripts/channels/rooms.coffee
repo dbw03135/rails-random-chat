@@ -35,3 +35,4 @@ jQuery(document).on 'turbolinks:load', ->
 
     $('#exit_room').click () ->
       App.global_chat.unsubscribe()
+      App.global_chat.send_message " 님이 나가셨습니다", messages.data('chat-room-id')

@@ -24,6 +24,8 @@ gem 'redis', '~> 3.2'
 
 gem 'devise'
 
+gem 'figaro'
+
 group :development do
   gem 'sqlite3'
   gem 'pry-rails'

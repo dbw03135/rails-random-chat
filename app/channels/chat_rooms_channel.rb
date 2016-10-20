@@ -2,12 +2,11 @@
 class ChatRoomsChannel < ApplicationCable::Channel
   def subscribed
     stream_from "chat_rooms_#{params['chat_room_id']}_channel"
-    print "------------접속완료"
   end
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
-    current_user.messages.create!(body: " 님이 퇴장하셨습니다", chat_room_id: params['chat_room_id'])
+    current_user.messages.create!(body: " 님의 연결이 끊겼습니다", chat_room_id: params['chat_room_id'])
     stop_all_streams
   end
 

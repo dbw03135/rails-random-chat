@@ -16,7 +16,7 @@
   <% if user_signed_in? %>
     <ul class="nav navbar-nav pull-xs-right">
       <li class="nav-item">
-        <span class="text-muted">Logged in as <strong><%= current_user.name %></strong></span>
+        <span class="text-muted"><strong><%= current_user.email %></strong> 호감도: <%= current_user.charm %></span>
       </li>
       <li class="nav-item active">
         <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
