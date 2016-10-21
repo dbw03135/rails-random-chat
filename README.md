@@ -16,7 +16,7 @@ Second, install figaro for setting enviroment variables. This gem helps SMTP Set
 $ bundle exec figaro install
 ```
 
-and set application.yml as follow.
+and set application.yml as below.
 
 ```yaml
 # config/application.yml
