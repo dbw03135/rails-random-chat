@@ -13,9 +13,8 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap-sass', '~> 3.3.6'
 
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

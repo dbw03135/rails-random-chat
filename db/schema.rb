@@ -41,10 +41,6 @@ ActiveRecord::Schema.define(version: 20160614154147) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
     t.integer  "charm",                  default: 0
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false

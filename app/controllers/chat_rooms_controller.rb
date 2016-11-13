@@ -5,7 +5,7 @@ class ChatRoomsController < ApplicationController
 
   def search
     empty_room = ChatRoom.find_by(user2: nil)
-    if (empty_room != nil)
+    if (empty_room != nil )
       chat_room = empty_room
       redirect_to chat_room_path(chat_room)
     else

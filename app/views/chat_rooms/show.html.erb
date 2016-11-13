@@ -1,32 +1,30 @@
-<h1>
-  <%#= link_to "방 삭제", @chat_room, method: :delete, data: {confirm: "You sure?"}, class: 'btn btn-primary btn-lg'%>
-  <a href="/chat_rooms"><button id="exit_room" class="btn btn-primary btn-lg">나가기</button></a>
-</h1>
-
-
-<div id="messages" data-chat-room-id="<%= @chat_room.id %>">
-  <%= render @chat_room.messages %>
-</div>
-
-<hr>
-<%= form_for @message, url: '#' do |f| %>
-  <%= hidden_field_tag 'chat_room_id', @chat_room.id %>
-
-  <div class="form-group">
-    <%#= f.label :body %>
-    <%= f.text_area :body, class: 'form-control' %>
-    <small class="text-muted">2글자 ~ 1000글자</small>
+<div class="chat_window">
+  <div class="top_menu">
+    <div class="buttons">
+      <div id="exit_room" class="button close"></div>
+    </div>
+    <div class="title">Chat</div>
   </div>
+  <ul id="messages" class="messages" data-chat-room-id="<%= @chat_room.id %>">
+    <%= render @chat_room.messages %>
+  </ul>
+  <div class="bottom_wrapper clearfix">
+    <%= form_for @message, url: '#' do |f| %>
+      <%= hidden_field_tag 'chat_room_id', @chat_room.id %>
 
-  <%= f.submit "전송", class: 'btn btn-primary btn-lg' %>
-<% end %>
+      <div class="message_input_wrapper">
+        <%= f.text_field :body, class: 'message_input' %>
+      </div>
 
+      <%= f.submit "전송", class: 'send_message' %>
+    <% end %>
+  </div>
+</div>
 
 <script>
   $('#message_body').keypress(function (e) {
   if (e.which == 13) {
-    $('form#new_message').submit();
-    return false;
+      $('form#new_message').submit();
   }
   });
 </script>
