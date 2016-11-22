@@ -27,10 +27,11 @@ class ChatRoomsController < ApplicationController
   def show
     @chat_room = ChatRoom.includes(:messages).find_by(id: params[:id])
     if current_user != @chat_room.user
-      @chat_room.user2 = current_user.id
+      @chat_room.user2 = current_user
       @chat_room.save
     end
     @message = Message.new
+
   end
 
   def exit

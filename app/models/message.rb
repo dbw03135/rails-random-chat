@@ -1,5 +1,4 @@
 class Message < ApplicationRecord
-  mount_uploaders :Pics, PicUploader
   belongs_to :user
   belongs_to :chat_room
 

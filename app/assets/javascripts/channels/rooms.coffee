@@ -32,8 +32,6 @@ jQuery(document).on 'turbolinks:load', ->
       send_message: (message, chat_room_id) ->
         @perform 'send_message', message: message, chat_room_id: chat_room_id
 
-      notice: (message, chat_room_id)->
-
     $('#new_message').submit (e) ->
       $this = $(this)
       textarea = $this.find('#message_body')

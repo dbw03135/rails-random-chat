@@ -6,6 +6,14 @@ Rails.application.routes.draw do
 
   resources :chat_rooms, only: [:new, :create, :show, :index]
 
+  resources :posts do
+    resources :comments, only: [:create, :destroy]
+  end
+
+  resources :bulletins do
+    resources :posts
+  end
+
   get '/search' => 'chat_rooms#search'
 
   post '/exit' => 'chat_rooms#exit'

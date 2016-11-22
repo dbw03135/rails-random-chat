@@ -1,6 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'impressionist'
+gem 'simple_form'
+gem 'friendly_id', '~> 5.1'
+gem "font-awesome-rails"
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
+gem 'will_paginate'
+gem 'rails-simple-search'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby

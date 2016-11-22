@@ -25,13 +25,14 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-left">
           <li><%= link_to '랜덤채팅', search_path, class: 'nav-link' %></li>
-          <li><a class="nav-link" href="documentation.html">게시판1</a></li>
-          <li><a class="nav-link" href="free-psd.html">게시판2</a></li>
+          <% Bulletin.all.each do |b|%>
+            <li><%= link_to b.title, bulletin_posts_path(b.id), class: 'nav-link' %></li>
+          <% end %>
         </ul>
         <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right hidden-xs">
           <li class="nav-link">
-            <p class="navbar-text"><strong><%= current_user.email %></strong>  호감도: <%= current_user.charm %></p>
+            <p class="navbar-text"><strong><%= current_user.email %></strong>  호감도: <%= current_user.votes_for.size %></p>
           </li>
           <li class="nav-link">
             <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
