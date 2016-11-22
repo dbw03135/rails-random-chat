@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
